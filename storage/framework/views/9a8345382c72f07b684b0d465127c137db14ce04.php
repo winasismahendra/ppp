@@ -1,6 +1,6 @@
 <?php $__env->startSection('isi'); ?>
- <!--BEGIN CONTENT-->
-                <div class="page-content">
+
+    <div class="page-content">
                     <div id="tab-general">
                         <div class="row mbl">
                             <div class="col-lg-12">
@@ -15,9 +15,9 @@
                             <div class="col-lg-12">
                             <div class="col-lg-12">
                         <ul id="generalTab" class="nav nav-tabs responsive">
-                            <li class="active"><a href="#alert-tab" data-toggle="tab">Alerts</a></li>
-                            <li><a href="#note-tab" data-toggle="tab">Notes</a></li>
-                            <li><a href="#label-badge-tab" data-toggle="tab">Labels & Badges</a></li>
+                            <li class="active"><a href="#alert-tab" data-toggle="tab">Slider</a></li>
+                            <li><a href="#note-tab" data-toggle="tab">Kata Depan</a></li>
+                            <li><a href="#label-badge-tab" data-toggle="tab">Keunggulan</a></li>
                             <li><a href="#pagination-tab" data-toggle="tab">Paginations</a></li>
                             <li><a href="#input-group-tab" data-toggle="tab">Input Groups</a></li>
                             <li><a href="#list-group-tab" data-toggle="tab">List Group</a></li>
@@ -30,7 +30,9 @@
                                 <div class="row">
                                     <div class="col-lg-12"><h3>Basic</h3>
 
-                                        <!--BEGIN CONTENT-->
+                                      
+
+                <!--BEGIN CONTENT-->
                 <div class="page-content">
                     <div id="tab-general">
                          <div class="panel panel-violet">
@@ -82,121 +84,193 @@
                                         </div>
                                     </div>
 
+                        
+                    
+                        <div class="row mbl">
+                            
+
+                            <div class="col-lg-12">
+                            <div class="row">
+                  
+                       
+                        <div class="panel panel-red">
+                            <div class="panel-heading">Contextual Row</div>
+                            <div class="panel-body">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        
+                                        <th>Judul</th>
+                                        <th>Isi</th>
+                                        <th>File</th>
+                                        <th>Admin</th>
+                                        <th>action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr class="active">
+                                        <td><?php echo e($slider->judul); ?></td>
+                                        <td><?php echo e($slider->deskripsi); ?></td>
+                                        <td><?php echo e($slider->gambar); ?></td>
+                                        <td><?php echo e($slider->id_admin); ?></td>
+                                        <td><a href="#" class="btn btn-green">  <i class="fa fa-edit"> </i>   edit</a>
+                                            <a href="/admin/slider/del/<?php echo e($slider->id); ?>" class="btn btn-red">  <i class="fa fa-trash-o"> </i>   hapus</a>
+                                        </td>
+                             
+                                    </tr>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+                        
+                    </div>
+                  
+                            
+                            
+                            </div>
+                            
+                        </div>
+                  </div>
+               
+                <!--END CONTENT-->
+
 
                     </div>
                 </div>
                 <!--END CONTENT-->
+
+
+                                    </div>
                                 </div>
                             </div>
                             <div id="note-tab" class="tab-pane fade">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="note note-success"><h4 class="box-heading">Success! Duis mollis, est non commodo luctus</h4>
+                                    <div class="col-lg-12">
+                                        
+                                        <div class="panel panel-yellow">
+                                            <div class="panel-heading">
+                                                Kata-Kata Depan</div>
+                                            <div class="panel-body pan">
+                                                <form action="<?php echo e(route('up_kata')); ?>" class="form-horizontal" method="post">
+                                                 <?php echo e(csrf_field()); ?>
 
-                                            <p>Nisi erat mattis consectetur purus sit amet porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p></div>
-                                        <div class="note note-info"><h4 class="box-heading">Info! Duis mollis, est non commodo luctus</h4>
+                                                <div class="form-body pal">
+                                                    <div class="form-group">
+                                                        <label for="inputName" class="col-md-3 control-label">
+                                                            Judul</label>
+                                                        <div class="col-md-9">
+                                                            <div class="input-icon right">
+                                                                <i class="fa fa-user"></i>
+                                                                <input id="inputName" type="text" placeholder="<?php echo e($katadepan->judul); ?>" class="form-control" name="judul" /></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputPassword" class="col-md-3 control-label">
+                                                            Isi</label>
+                                                        <div class="col-md-9">
+                                                            <div class="input-icon right">
+                                                                <i class="fa fa-lock"></i>
+                                                                <input id="inputPassword" type="text" placeholder="<?php echo e($katadepan->isi); ?>" class="form-control" name="isi" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions pal">
+                                                    <div class="form-group mbn">
+                                                        <div class="col-md-offset-3 col-md-6">
+                                                           
+                                                            <button type="submit" class="btn btn-primary">
+                                                                Tambahkan</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
 
-                                            <p>Nisi erat mattis consectetur purus sit amet porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p></div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="note note-warning"><h4 class="box-heading">Warning! Duis mollis, est non commodo luctus</h4>
 
-                                            <p>Nisi erat mattis consectetur purus sit amet porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p></div>
-                                        <div class="note note-danger"><h4 class="box-heading">Dangerous! Duis mollis, est non commodo luctus</h4>
 
-                                            <p>Nisi erat mattis consectetur purus sit amet porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p></div>
+
                                     </div>
                                 </div>
                             </div>
                             <div id="label-badge-tab" class="tab-pane fade">
                                 <div class="row">
-                                    <div class="col-lg-6"><h3>Labels</h3><span class="label label-default">Default</span>&nbsp;<span class="label label-primary">Primary</span>&nbsp;<span class="label label-success">Success</span>&nbsp;<span class="label label-info">Info</span>&nbsp;<span class="label label-warning">Warning</span>&nbsp;<span class="label label-danger">Danger</span>
+                                    
+                                    <div class="col-lg-12">
+                                        
+                                        <div class="panel panel-yellow">
+                                            <div class="panel-heading">
+                                                Kata-Kata Depan</div>
+                                            <div class="panel-body pan">
+                                                <form action="<?php echo e(route('up_keunggulan')); ?>" class="form-horizontal" method="post">
+                                                 <?php echo e(csrf_field()); ?>
 
-                                        <div class="mbxl"></div>
-                                        <h3>Label Colors</h3><span class="label label-red">Red</span>&nbsp;<span class="label label-orange">Orange</span>&nbsp;<span class="label label-green">Green</span>&nbsp;<span class="label label-yellow">Yellow</span>&nbsp;<span class="label label-blue">Blue</span>&nbsp;<span class="label label-violet">Violet</span>&nbsp;<span
-                                                class="label label-pink">Pink</span>&nbsp;<span class="label label-grey">Grey</span>&nbsp;<span class="label label-dark">Dark</span>
-
-                                        <div class="mbxl"></div>
-                                        <h3>Label In Headings</h3>
-
-                                        <h1>Example heading
-                                            &nbsp;<span class="label label-default">Default</span></h1>
-
-                                        <h2>Example heading
-                                            &nbsp;<span class="label label-primary">Primary</span></h2>
-
-                                        <h3>Example heading
-                                            &nbsp;<span class="label label-success">Success</span></h3><h4>Example heading
-                                            &nbsp;<span class="label label-warning">Warning</span></h4><h5>Example heading
-                                            &nbsp;<span class="label label-info">Info</span></h5><h6>Example heading
-                                            &nbsp;<span class="label label-danger">Danger</span></h6></div>
-                                    <div class="col-lg-6"><h3>Badges</h3><span class="badge badge-default">Default</span>&nbsp;<span class="badge badge-primary">Primary</span>&nbsp;<span class="badge badge-success">Success</span>&nbsp;<span class="badge badge-warning">Warning</span>&nbsp;<span class="badge badge-info">Info</span>&nbsp;<span class="badge badge-danger">Danger</span>
-
-                                        <div class="mbxl"></div>
-                                        <h3>Badge Colors</h3><span class="badge badge-red">Red</span>&nbsp;<span class="badge badge-orange">Orange</span>&nbsp;<span class="badge badge-green">Green</span>&nbsp;<span class="badge badge-yellow">Yellow</span>&nbsp;<span class="badge badge-blue">Blue</span>&nbsp;<span class="badge badge-pink">Pink</span>&nbsp;<span
-                                                class="badge badge-violet">Violet</span>&nbsp;<span class="badge badge-grey">Grey</span>&nbsp;<span class="badge badge-dark">Dark</span>
-
-                                        <div class="mtxl"></div>
-                                        <h3>Badges List Navigations</h3>
-                                        <ul style="max-width: 260px;" class="nav nav-pills nav-stacked">
-                                            <li class="active"><a href="#"><span class="badge pull-right">2</span>Home</a></li>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="#"><span class="badge badge-warning pull-right">3</span>Messages</a></li>
-                                        </ul>
-                                        <div class="mtxl"></div>
-                                        <h3>Badge In Pill</h3>
-                                        <ul class="nav nav-pills">
-                                            <li class="active"><a href="#">Home
-                                                &nbsp;<span class="badge badge-green">3</span></a></li>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="#">Messages
-                                                &nbsp;<span class="badge badge-info">3</span></a></li>
-                                        </ul>
-                                        <div class="mbxl"></div>
-                                        <h3>Badge With Button Dropdown</h3>
-
-                                        <div class="btn-group">
-                                            <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Account
-                                                &nbsp;<i class="fa fa-angle-down"></i></button>
-                                            <ul role="menu" class="dropdown-menu">
-                                                <li><a href="#">Action<span class="badge badge-yellow pull-right">5</span></a></li>
-                                                <li><a href="#">Another action<span class="badge badge-info pull-right">3</span></a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Separated link</a></li>
-                                            </ul>
+                                                <div class="form-body pal">
+                                                    <div class="form-group">
+                                                        <label for="inputName" class="col-md-3 control-label">
+                                                            Judul</label>
+                                                        <div class="col-md-9">
+                                                            <div class="input-icon right">
+                                                                <i class="fa fa-user"></i>
+                                                                <input id="inputName" type="text" placeholder="Judul" class="form-control" name="judul" /></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputPassword" class="col-md-3 control-label">
+                                                            Deskripsi</label>
+                                                        <div class="col-md-9">
+                                                            <div class="input-icon right">
+                                                                <i class="fa fa-lock"></i>
+                                                                <input id="inputPassword" type="text" placeholder="deskripsi" class="form-control" name="deskripsi" /></div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group">
+                                                        <label for="inputPassword" class="col-md-3 control-label">
+                                                            Judul Label</label>
+                                                        <div class="col-md-9">
+                                                            <div class="input-icon right">
+                                                                <i class="fa fa-lock"></i>
+                                                                <input id="inputPassword" type="text" placeholder="Judul Prestasi" class="form-control" name="judul_label" /></div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group">
+                                                        <label for="inputPassword" class="col-md-3 control-label">
+                                                            Isi Label</label>
+                                                        <div class="col-md-9">
+                                                            <div class="input-icon right">
+                                                                <i class="fa fa-lock"></i>
+                                                                <input id="inputPassword" type="text" placeholder="Isi Prestasi" class="form-control" name="isi_label" /></div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group">
+                                                        <label for="inputPassword" class="col-md-3 control-label">
+                                                            Icon</label>
+                                                        <div class="col-md-9">
+                                                            <div class="input-icon right">
+                                                                <i class="fa fa-lock"></i>
+                                                                <input id="inputPassword" type="text" placeholder="Icon" class="form-control" name="icon" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions pal">
+                                                    <div class="form-group mbn">
+                                                        <div class="col-md-offset-3 col-md-6">
+                                                           
+                                                            <button type="submit" class="btn btn-primary">
+                                                                Tambahkan</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        &nbsp;
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-primary">Chats</button>
-                                            <button type="button" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true" class="btn btn-primary dropdown-toggle"><i class="fa fa-angle-down"></i></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><span class="label label-warning">7:00 AM</span>&nbsp;
-                                                    Hi :)</a></li>
-                                                <li><a href="#"><span class="label label-warning">8:00 AM</span>&nbsp;
-                                                    How are you?</a></li>
-                                                <li><a href="#"><span class="label label-warning">9:00 AM</span>&nbsp;
-                                                    What are you doing?</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#" class="text-center">View All</a></li>
-                                            </ul>
-                                        </div>
-                                        &nbsp;
-                                        <div class="btn-group">
-                                            <button type="button" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true" class="btn btn-primary dropdown-toggle">Inbox
-                                                &nbsp;<span class="badge badge-yellow">25</span></button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li><a href="#"><span class="label label-info"><i class="fa fa-bell"></i></span>&nbsp;
-                                                    Favourites Snippet</a></li>
-                                                <li><a href="#"><span class="label label-red"><i class="fa fa-magic"></i></span>&nbsp;
-                                                    Email marketing</a></li>
-                                                <li><a href="#"><span class="label label-yellow"><i class="fa fa-bullhorn"></i></span>&nbsp;
-                                                    Subscriber focused email design</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#" class="text-center">View All</a></li>
-                                            </ul>
-                                        </div>
+
+
                                     </div>
+
+
                                 </div>
                             </div>
                             <div id="pagination-tab" class="tab-pane fade">
@@ -790,7 +864,6 @@
                         </div>
                     </div>
                 </div>
-                <!--END CONTENT-->
 
-                <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.amaster', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\xampp\htdocs\sekolah\resources\views/admin/slidebar.blade.php ENDPATH**/ ?>

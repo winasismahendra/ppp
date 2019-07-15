@@ -22,5 +22,9 @@ Route::get('/jurusan/multimedia', 'MasterController@multimedia');
 
 Route::get('/admin', 'AdminController@index');
 
-
+Route::get('/admin/slider/del/{id}', 'AdminController@slider_del')->name('del_slider');
 Route::post('/admin/slider/proses', 'AdminController@slider_up')->name('up_slider');
+
+
+Route::post('/admin/kata-depan/proses', 'AdminController@kata_up')->name('up_kata');
+Route::post('/admin/keunggulan/proses', 'AdminController@keunggulan_up')->name('up_keunggulan');

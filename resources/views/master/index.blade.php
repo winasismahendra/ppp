@@ -29,8 +29,10 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2">
-                <h2 class="module-title font-alt">Welcome to Titan</h2>
-                <div class="module-subtitle font-serif large-text">We’re an award winning London based digital agency, lovingly curating pixels for maximum impact. We don’t have a style — we have standards.</div>
+              @foreach( $katadepan as $katadepan)
+                <h2 class="module-title font-alt">{{$katadepan->judul}}</h2>
+                <div class="module-subtitle font-serif large-text">{{$katadepan->isi}}.</div>
+              @endforeach
               </div>
             </div>
             <div class="row">
@@ -50,62 +52,16 @@
               </div>
             </div>
             <div class="row multi-columns-row">
+              
+              @foreach($keunggulan as $keunggulan)
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="features-item">
-                  <div class="features-icon"><span class="icon-lightbulb"></span></div>
-                  <h3 class="features-title font-alt">Ideas and concepts</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
+                  <div class="features-icon"><span class="{{$keunggulan->icon}}"></span></div>
+                  <h3 class="features-title font-alt">{{$keunggulan->subjudul}}</h3>
+                  <p>{{$keunggulan->isi}}</p>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="features-item">
-                  <div class="features-icon"><span class="icon-bike"></span></div>
-                  <h3 class="features-title font-alt">Optimised for speed</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="features-item">
-                  <div class="features-icon"><span class="icon-tools"></span></div>
-                  <h3 class="features-title font-alt">Designs &amp; interfaces</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="features-item">
-                  <div class="features-icon"><span class="icon-gears"></span></div>
-                  <h3 class="features-title font-alt">Highly customizable</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="features-item">
-                  <div class="features-icon"><span class="icon-tools-2"></span></div>
-                  <h3 class="features-title font-alt">Coding &amp; development</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="features-item">
-                  <div class="features-icon"><span class="icon-genius"></span></div>
-                  <h3 class="features-title font-alt">Features &amp; plugins</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="features-item">
-                  <div class="features-icon"><span class="icon-mobile"></span></div>
-                  <h3 class="features-title font-alt">Responsive design</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="features-item">
-                  <div class="features-icon"><span class="icon-lifesaver"></span></div>
-                  <h3 class="features-title font-alt">Dedicated support</h3>
-                  <p>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.</p>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
         </section>

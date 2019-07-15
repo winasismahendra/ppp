@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\slider;
+use App\katadepan;
+use App\keunggulan;
 
 
 class MasterController extends Controller
@@ -13,7 +15,9 @@ class MasterController extends Controller
     {
     	
         $slider = slider::all();
-    	return view('master/index',['slider' => $slider]); 
+        $katadepan = katadepan::all();
+        $keunggulan = keunggulan::all();
+    	return view('master/index',['slider' => $slider, 'katadepan' => $katadepan, 'keunggulan' => $keunggulan]); 
     
     }
 

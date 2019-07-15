@@ -1,7 +1,7 @@
 <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a src="<?php echo e(asset('master/assets/images/logo.png')); ?>" class="navbar-brand"  href="/"><img src="<?php echo e(asset('master/assets/images/logo.png')); ?>" width="35" height="35">SMK UA</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a src="<?php echo e(asset('master/assets/images/logo2.png')); ?>" class="navbar-brand"  href="/"><img src="<?php echo e(asset('master/assets/images/logo2.png')); ?>" width="118" height="14"></a>
           </div>
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
