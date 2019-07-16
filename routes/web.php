@@ -20,8 +20,9 @@ Route::get('/jurusan/multimedia', 'MasterController@multimedia');
 
 /*admin*/
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@coba');
 
+Route::get('/admin/halaman-depan/slidebar', 'AdminController@slidebar');
 Route::get('/admin/slider/del/{id}', 'AdminController@slider_del')->name('del_slider');
 Route::post('/admin/slider/proses', 'AdminController@slider_up')->name('up_slider');
 

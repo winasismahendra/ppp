@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Input;
 class AdminController extends Controller
 {
    
+    public  function    coba(){
+
+
+        return  view    ('admin/index');
+    }
+
+
 	public function index()
     {
     	$slider = slider::all();
@@ -27,7 +34,7 @@ class AdminController extends Controller
     {
     	
 
-    	return view('layout/amaster'); 
+    	return view('admin/slidebar'); 
     
     }
 
