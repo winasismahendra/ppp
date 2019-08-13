@@ -8,11 +8,44 @@ use Illuminate\Http\UploadedFile;
 use App\slider;
 use App\katadepan;
 use App\keunggulan;
+use App\album;
+use App\kategori;
+use App\berita;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
+
 class AdminController extends Controller
 {
-   
+    public function berita_add(){
+        $kategori = kategori::all();
+        return view ('admin/beritaadd',['kategori' => $kategori]);
+    }
+    public function berita_store(Request $request){
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required',
+            'isi' => 'required',
+            'id_kategori' => 'required'
+            ]);
+        if ($validator->fails()) {
+            return redirect()->back()->with('gagal','gagal post berita!');
+        }
+        else {
+            $berita = new berita;
+            $berita->judul = $request->judul;
+            $berita->isi = $request->isi;
+            $berita->id_kategori = $request->id_kategori;
+            $berita->tanggal = now();
+            $berita->save();
+            return redirect()->back()->with('sukses','sukses post berita!');
+        }
+        
+    }
+    public  function    ppdb(){
+
+
+        return  view    ('master/ppdb');
+    }
+
     public  function    coba(){
 
 
@@ -164,7 +197,54 @@ class AdminController extends Controller
            			return redirect()->back()->with('success','sukses!');
              
     }
+    public function galeri_add(){
+        return view('/admin/galeriadd');
+    }
 
+    public function galeri_store(Request $request){
+        $this->validate($request, [
 
+                'file' =>  'required',
+                'file*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
+       
+         {
+
+            foreach($request->file('file') as $image)
+            {
+                $name= 'galeri-'.time().'-'.$image->getClientOriginalName();
+                $image->move(public_path().'/images/gallery', $name);  
+                $data[] = $name;  
+            }
+         }
+
+         $form = new album();
+         $form->foto=json_encode($data);
+         
+        
+        $form->save();
+
+        return back()->with('success', 'Your images has been successfully');
+    }
+    public function berita_upimage(Request $request){
+        $CKEditor = $request->input('CKEditor');
+        $funcNum  = $request->input('CKEditorFuncNum');
+        $message  = $url = '';
+            if (Input::hasFile('upload')) {
+                $file = Input::file('upload');
+                if ($file->isValid()) {
+                    $filename =rand(1000,9999).$file->getClientOriginalName();
+                    $file->move(public_path().'/wysiwyg/', $filename);
+                    $url = url('wysiwyg/' . $filename);
+        } else {
+            $message = 'An error occurred while uploading the file.';
+        }
+    } 
+    else {
+        $message = 'No file uploaded.';
+    }
+    return '<script>window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'", "'.$message.'")</script>';    
+    }
 
 }

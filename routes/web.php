@@ -15,6 +15,8 @@ Route::get('/', 'MasterController@index');
 Route::get('/jurusan/tkj', 'MasterController@tkj');
 Route::get('/jurusan/perbankan', 'MasterController@perbankan');
 Route::get('/jurusan/multimedia', 'MasterController@multimedia');
+Route::get('/galeri', 'MasterController@galeri');
+
 
 
 
@@ -29,3 +31,14 @@ Route::post('/admin/slider/proses', 'AdminController@slider_up')->name('up_slide
 
 Route::post('/admin/kata-depan/proses', 'AdminController@kata_up')->name('up_kata');
 Route::post('/admin/keunggulan/proses', 'AdminController@keunggulan_up')->name('up_keunggulan');
+
+Route::get('/admin/galeri/add', 'AdminController@galeri_add')->name('galeri_add');
+Route::post('/admin/galeri/store', 'AdminController@galeri_store')->name('galeri_store');
+
+Route::get('/ppdb', 'AdminController@ppdb');
+
+Route::get('/admin/berita/add', 'AdminController@berita_add')->name('berita_add');
+Route::post('/admin/berita/store', 'AdminController@berita_store')->name('berita_store');
+
+//cke
+Route::post('upload_image','AdminController@berita_upimage')->name('berita_upimage');

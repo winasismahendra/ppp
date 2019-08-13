@@ -1248,7 +1248,6 @@ General Styles - Owlcarousel
   letter-spacing: 3px;
   font-size: 11px;
   transition: background, padding 0.4s ease-in-out 0s;
-  margin-left: -300px;
 }
 
 .navbar a {
@@ -1268,7 +1267,6 @@ General Styles - Owlcarousel
   font-weight: 400;
   font-size: 22px;
   color: #fff;
-  padding: 8px 15px;
 }
 
 .navbar-custom .nav li > a {

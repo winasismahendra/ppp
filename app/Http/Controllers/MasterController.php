@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\slider;
 use App\katadepan;
 use App\keunggulan;
+use App\galeri;
 
 
 class MasterController extends Controller
@@ -43,5 +44,9 @@ class MasterController extends Controller
 
     	return view('master/multimedia'); 
     
+    }
+    public function galeri(){
+        $galeri = galeri::all();
+        return view('master/galeri',['galeri' => $galeri]);
     }
 }
