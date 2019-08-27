@@ -1,7 +1,7 @@
 <h1>tes</h1>
 <br>
 
-<form action="" method="post">
+<form action="{{route('ppdb.add')}}" enctype="multipart/form-data" method="post">
 
 	Jenis Pendaftaran
 	<select name="jenis_pendaftaran">
@@ -277,6 +277,6 @@
 		<option>Tuna Wicara</option>
 	</select> <br>
 
-
+<button type="submit">cok</button>
 
 </form>

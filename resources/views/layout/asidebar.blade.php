@@ -7,6 +7,8 @@
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>Halaman Depan </a>
                                     <ul id="togglePages" class="collapse unstyled">
+                                         <li><a href="/admin/berita/add"><i class="icon-inbox"></i>Berita </a></li>
+                                         <li><a href="/admin/berita/controller"><i class="icon-inbox"></i>Kontrol Berita</a></li>
                                         <li><a href="/admin/halaman-depan/slidebar"><i class="icon-inbox"></i>Slidebar </a></li>
                                         <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
                                         <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>

@@ -15,16 +15,9 @@
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>    
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+       
 
 
-
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-  <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>   
 
 
     </head>
@@ -59,7 +52,7 @@
                             </li>
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="images/user.png" class="nav-avatar" />
+                                <img src="{{asset('/images/user.png')}}" class="nav-avatar" />
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Your Profile</a></li>
@@ -110,6 +103,7 @@
         <script src="scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
         <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="scripts/common.js" type="text/javascript"></script>
+         <script type="text/javascript" src="{{asset('master/admin2/scripts/jquery.js')}}"></script>
 
          <script src="{{asset('master/admin2/scripts/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('master/admin2/scripts/jquery-ui-1.10.1.custom.min.js')}}" type="text/javascript"></script>
@@ -118,5 +112,6 @@
         <script src="{{asset('master/admin2/scripts/flot/jquery.flot.resize.js')}}" type="text/javascript"></script>
         <script src="{{asset('master/admin2/scripts/datatables/jquery.dataTables.js')}}" type="text/javascript"></script>
         <script src="{{asset('master/admin2/scripts/common.js')}}" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
       
     </body>
